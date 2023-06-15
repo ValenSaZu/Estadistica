@@ -101,3 +101,24 @@ Data2<-data.frame(x,Prob)
 Data2
 
 plot(x, Prob, main="Diagrama de dispersion", type='h', las=1, lwd=6)
+
+#--------------------------------------------------------------------
+
+#Ejemplo 3
+p<-0.2
+q<-1-p
+x<-1:2
+Prob<-p*q^(x-1)
+Data1<-data.frame(x,Prob)
+Data1
+Suma<-sum(Prob)
+Suma
+#Esperanza y varianza
+mu<-1-p
+mu
+var1<-q/p^2
+var1
+#otro metodo
+p<-0.2
+x<-2
+pgeom(x-1,p)
