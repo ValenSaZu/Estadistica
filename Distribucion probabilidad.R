@@ -122,3 +122,54 @@ var1
 p<-0.2
 x<-2
 pgeom(x-1,p)
+
+#DISTRIBUICON GEOMETRICA PASCAL
+#Ejemplo 04
+x1<-12 #alteracione cerebrales
+total<-50
+p<-x1/total
+q<-1-p
+#a)
+r<-1
+x<-8
+Prob<-choose(x-1,r-1)*p^r*q^(x-r)
+Prob
+#Otro metodo
+Prob<-dnbinom(x-r,r,p)
+Prob
+
+#--------------------------------------------------
+
+#Ejemplo 05
+p<-0.20
+q<-1-p
+#pregunta
+r<-3
+x<-8
+Prob<-choose(x-1,r-1)*p^r*q^(x-r)
+Prob
+#Otro metodo
+Prob<-dnbinom(x-r,r,p)
+Prob
+
+#--------------------------------------------------
+
+#Ejemplo 06
+p<-0.10
+q<-1-p
+"pregunta"
+r<-4
+#a)Esperanza
+mu<-r/p
+mu
+#b)Prob que se detenga el en 10°
+x<-10
+Prob<-choose(x-1,r-1)*p^r*q^(x-r)
+Prob
+#c)Al menos 7 ariculos antes de que se detenga
+#P(x>=7)=1-P(x<7)
+x<-r:6
+Prob<-choose(x-1,r-1)*p^r*q^(x-r)
+Prob
+Rpta<-1-sum(Prob)
+Rpta
