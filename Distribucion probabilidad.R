@@ -173,3 +173,39 @@ Prob<-choose(x-1,r-1)*p^r*q^(x-r)
 Prob
 Rpta<-1-sum(Prob)
 Rpta
+
+#--------------------------------------------------
+
+#DISTRIBUCION DE POISON
+#P(X=x)=(e^(-lamda)*lamda^x)/x
+
+#Ejemplo 01
+p<-0.02
+n<-10000
+#Esperado
+Lamda<-n*p
+mu<-Lamda
+mu
+#Varianza
+var1<-Lamda
+var1
+#Desviacion tipica
+DesvTipica<-sqrt(var1)
+DesvTipica
+
+#-------------------------------
+
+#Ejemplo 02
+Lamda<-3
+#a) Ninguna llamada
+x<-0
+Prob<-exp(-Lamda)*Lamda^x/factorial(x)
+Prob
+#b) Al menos 4 llamadas
+x<-0:3
+Prob<-exp(-Lamda)*Lamda^x/factorial(x)
+Rpta<-1-sum(Prob)
+Rpta
+#c) costo por llamada
+Costo<- 0.5*Lamda
+Costo
